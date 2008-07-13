@@ -1,0 +1,64 @@
+<div id="content">
+	<div>
+		<div class="content">
+			<h1 class="title style1">Propriedades do Usuário</h1>
+			<br/>
+			<b>Nome:</b> <%=h @user.send('nome') %>
+			<br/>
+			<b>Endereço:</b> <%=h @user.send('endereco') %>
+			<br/>
+			<b>Bairro:</b> <%=h @user.send('bairro') %>
+			<br/>
+			<b>CEP:</b> <%=h @user.send('cep') %>
+			<br/>
+			<b>Telefone:</b> <%=h @user.send('telefone') %>
+			<br/>
+			<b>Celular:</b> <%=h @user.send('celular') %>
+			<br/>
+			<b>E-mail:</b> <%=h @user.send('email') %>
+			<br/>
+			<b>Login:</b> <%=h @user.send('login') %>
+			<br/>
+			<b>Formação:</b> <%=h @user.send('formacao') %>
+			<br/>
+			<b>Escolaridade Atual:</b> <%=h @user.escolaridade.send('nome') %>
+			<br/>
+			<b>Curso Atual:</b> <%=h @user.curso.send('nome') %>
+			<br/>
+			<b>Instituição:</b> <%=h @user.send('instituicao') %>
+			<br/>
+			<b>Matrícula (DRE):</b> <%=h @user.send('dre') %>
+			<br/>
+			<b>Período:</b> <%=h @user.send('periodo') %>
+			<br/>
+			<b>Turno:</b> <%=h @user.send('turno') %>
+			<br/>
+			<b>Coeficiente de Rendimento:</b> <%=h @user.send('cr') %>
+			<br/>
+			<b>Área principal de interesse:</b> <%=h @user.send('interesse') %>
+			<br/>
+			<b>Plataformas:</b>
+			<br/>
+			<% @user.plataformas.each do |p| %>
+				<%=h p.nome %>
+				<br/>
+			<% end %>
+			<b>Administrador:</b> <%=h @user.send('admin') ? 'Sim' : '-' %>
+			<br/>
+			<b>Perfis:</b>
+			<br/>
+			<% @user.roles.each do |r| %>
+				<%=h r.nome %>
+				<br/>
+			<% end %>
+			<b>Aprovado:</b> <%=h @user.send('aprovado') ? 'Sim' : '-' %>
+			<br/>
+			<p ><% unless @user.send('aprovado') %>
+				<%= link_to image_tag("ok.gif", :border => 0, :alt => 'Aprovar'), { :action => 'aprovar', :id => @user }, :method => "post" %> | 
+				<% end %>
+				<%= link_to image_tag("ed.png", :border => 0, :alt => 'Editar'), :action => 'edit', :id => @user %> | 
+				<%= link_to image_tag("goBack.gif", :border => 0, :alt => 'Voltar'), :action => 'list' %>
+			</p>
+	  	</div>
+	</div>
+</div>
