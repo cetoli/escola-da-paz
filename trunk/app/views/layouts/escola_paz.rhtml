@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>Plataforma Escola da PAZ</title>
+  <title>Plataforma da PAZ</title>
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <%= stylesheet_link_tag 'scaffold' %>
@@ -35,9 +35,7 @@
 				<li id="current" class="active item1"><%= link_to "Principal", :controller => "user", :action => "welcome" %></li>
 				<li class="item45"><%= link_to "Novo usuário", :controller => "user", :action => "signup" %></li>
 				<li class="item46"><%= link_to "Lembrar minha senha", :controller => "user", :action => "forgot_password" %></li>
-				<li class="item47"><%= link_to "Artigos", :controller => "area", :action => "listar", :id => 'doc' %></li>			
-				<li class="item48"><%= link_to "Seminários", :controller => "area", :action => "listar", :id => 'sem' %></li>
-				<li class="item49"><%= link_to "Sobre a Escola da Paz", :controller => "user", :action => "about" %></li>
+				<li class="item47"><%= link_to "Sobre a Plataforma da Paz", :controller => "user", :action => "about" %></li>
 		</div>
 		<div id="leftbottom"></div>
 		<div id="linkscolumn">
@@ -98,7 +96,7 @@
 </div>
 <div id="footer">
 	<div class="style8" id="sidebar">
-		@ Plataforma Escola da PAZ 2008 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		@ Plataforma da PAZ 2008 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<b>Powered by: </b><img src="/images/rails.png" alt="Ruby On Rails" align="center" height="45" />
 	</div>
 </div>
