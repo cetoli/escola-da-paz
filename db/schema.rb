@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 13) do
+ActiveRecord::Schema.define(:version => 14) do
 
   create_table "area_interesses", :force => true do |t|
     t.column "codigo", :string, :limit => 10, :default => "", :null => false
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 13) do
     t.column "codigo",    :string,  :limit => 5,  :default => "",    :null => false
     t.column "nome",      :string,  :limit => 50, :default => "",    :null => false
     t.column "artigo",    :boolean,               :default => false, :null => false
+    t.column "paper",     :boolean,               :default => false, :null => false
     t.column "projeto",   :boolean,               :default => false, :null => false
     t.column "seminario", :boolean,               :default => false, :null => false
   end
@@ -98,6 +99,24 @@ ActiveRecord::Schema.define(:version => 13) do
 
   add_index "modelos", ["titulo"], :name => "ModTitUnqIdx", :unique => true
   add_index "modelos", ["nome"], :name => "ModNomUnqIdx", :unique => true
+
+  create_table "papers", :force => true do |t|
+    t.column "area_id",     :integer,                     :null => false
+    t.column "user_id",     :integer,                     :null => false
+    t.column "titulo",      :string,   :default => "",    :null => false
+    t.column "resenha",     :text,     :default => "",    :null => false
+    t.column "nome_resumo", :string
+    t.column "resumo",      :binary
+    t.column "nome",        :string
+    t.column "anexo",       :binary
+    t.column "criado",      :datetime,                    :null => false
+    t.column "alterado",    :datetime,                    :null => false
+    t.column "aprovado",    :boolean,  :default => false, :null => false
+  end
+
+  add_index "papers", ["titulo"], :name => "PapTitUnqIdx", :unique => true
+  add_index "papers", ["area_id"], :name => "FK_Pap_Are"
+  add_index "papers", ["user_id"], :name => "FK_Pap_Usr"
 
   create_table "projetos", :force => true do |t|
     t.column "area_id",           :integer,                     :null => false

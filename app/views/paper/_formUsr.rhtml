@@ -1,0 +1,24 @@
+<%= error_messages_for 'paper' %>
+
+<!--[form:paper]-->
+<p>
+	<label for="paper_titulo">Título:</label>
+	<br/>
+	<%= text_field 'paper', 'titulo', :size => 75, :maxlength => 255 %>
+</p>
+<p>
+	<label for="paper_resenha">Resumo:</label>
+	<br/>
+	<%= text_area 'paper', 'resenha', :cols => 57 %>
+</p>
+<p>
+	<label for="paper_resumos">Artigo:</label>
+	<br/>
+	<%= file_field 'paper', 'resumos' %>
+</p>
+<p>
+	<label for="paper_anexos">Anexo:</label>
+	<br/>
+	<%= file_field 'paper', 'anexos' %>
+</p>
+<!--[eoform:paper]-->
