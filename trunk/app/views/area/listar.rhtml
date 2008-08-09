@@ -7,6 +7,9 @@
 				<% if (@id.eql? 'doc') && area.artigo %>
 					<%= link_to area.nome, { :controller => "documento", :action => 'getDocsArea', :id => area, :area => area.codigo }, :method => "post" %><br />
 				<% end %>
+				<% if (@id.eql? 'art') && area.paper %>
+					<%= link_to area.nome, { :controller => "paper", :action => 'getArtsArea', :id => area, :area => area.codigo }, :method => "post" %><br />
+				<% end %>
 				<% if (@id.eql? 'prj') && area.projeto %>
 					<%= link_to area.nome, { :controller => "projeto", :action => 'getPrjsArea', :id => area, :area => area.codigo }, :method => "post" %><br />
 				<% end %>

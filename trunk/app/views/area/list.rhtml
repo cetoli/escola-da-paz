@@ -7,6 +7,7 @@
 				<tr align="center">
 					<th>Código</th>
 					<th>Nome</th>
+					<th>Resenha de Artigo</th>
 					<th>Artigo</th>
 					<th>Projeto</th>
 					<th>Seminário</th>
@@ -17,6 +18,7 @@
 					<td><%=h area.codigo %></td>
 					<td><%=h area.nome %></td>
 					<td><%=h area.artigo ? 'Sim' : '-' %></td>
+					<td><%=h area.paper ? 'Sim' : '-' %></td>
 					<td><%=h area.projeto ? 'Sim' : '-' %></td>
 					<td><%=h area.seminario ? 'Sim' : '-' %></td>
 					<td><%= link_to image_tag("opn.png", :border => 0, :alt => 'Mostrar'), :action => 'show', :id => area %></td>

@@ -13,6 +13,10 @@
 						<td><%= link_to "Criar Resenhas de Artigos", :controller => "area", :action => "listar", :id => 'doc' %></td>
 					</tr>
 					<tr>
+						<td><%= link_to image_tag("docs.gif", :border => 0, :width => 50, :height => 50, :alt => 'Artigos'), {:controller => "area", :action => 'listar', :id => 'art'} %></td>
+						<td><%= link_to "Criar Artigos", :controller => "area", :action => "listar", :id => 'art' %></td>
+					</tr>
+					<tr>
 						<td><%= link_to image_tag("docs.gif", :border => 0, :width => 50, :height => 50, :alt => 'Seminários'), {:controller => "area", :action => 'listar', :id => 'sem'} %></td>
 						<td><%= link_to "Criar Seminários", :controller => "area", :action => "listar", :id => 'sem' %></td>
 					</tr>
@@ -46,6 +50,14 @@
 						<td><%= link_to "Verificar Resenhas de Artigos", :controller => "documento", :action => "list" %></td>
 					</tr>
 					<tr>
+						<td><%= link_to image_tag("tutorials.png", :border => 0, :width => 50, :height => 50, :alt => 'Verificar Artigos dos Usuários'), {:controller => "paper", :action => 'list'} %></td>
+						<td><%= link_to "Verificar Artigos dos Usuários", :controller => "paper", :action => "list" %></td>
+					</tr>
+					<tr>
+						<td><%= link_to image_tag("tutorials.png", :border => 0, :width => 50, :height => 50, :alt => 'Verificar Seminários'), {:controller => "seminario", :action => 'list'} %></td>
+						<td><%= link_to "Verificar Seminários", :controller => "seminario", :action => "list" %></td>
+					</tr>
+					<tr>
 						<td><%= link_to image_tag("tutorials.png", :border => 0, :width => 50, :height => 50, :alt => 'Verificar Projetos'), {:controller => "projeto", :action => 'list'} %></td>
 						<td><%= link_to "Verificar Projetos", :controller => "projeto", :action => "list" %></td>
 					</tr>
@@ -68,10 +80,6 @@
 					<tr>
 						<td><%= link_to image_tag("tutorials.png", :border => 0, :width => 50, :height => 50, :alt => 'Escolaridades'), {:controller => "escolaridade", :action => 'list'} %></td>
 						<td><%= link_to "Verificar Escolaridades", :controller => "escolaridade", :action => "list" %></td>
-					</tr>
-					<tr>
-						<td><%= link_to image_tag("tutorials.png", :border => 0, :width => 50, :height => 50, :alt => 'Verificar Seminários'), {:controller => "seminario", :action => 'list'} %></td>
-						<td><%= link_to "Verificar Seminários", :controller => "seminario", :action => "list" %></td>
 					</tr>
 					<tr>
 						<td><%= link_to image_tag("tutorials.png", :border => 0, :width => 50, :height => 50, :alt => 'Verificar Tipos de Arquivos'), {:controller => "arquivo", :action => 'list'} %></td>

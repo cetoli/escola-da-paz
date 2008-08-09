@@ -52,7 +52,7 @@ class DocumentoController < ApplicationController
       flash[:warning] = "E-mail de notificação não enviado. Erro: 'Tempo de operação esgotado'..."
       redirect_to :action => 'list'
     rescue  ActiveRecord::StatementInvalid
-      flash[:warning] = "Alteração do documento não efetuada. Erro: 'Erro no Banco de Dados'..."
+      flash[:warning] = "Cadastramento do documento não efetuada. Erro: 'Erro no Banco de Dados'..."
       redirect_to :action => 'show', :id => @documento
     end
   end

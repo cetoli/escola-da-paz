@@ -4,6 +4,7 @@ class CreateAreas < ActiveRecord::Migration
       t.column :codigo, :string, :limit => 5, :null => false
       t.column :nome, :string, :limit => 50, :null => false
       t.column :artigo, :boolean, :default => 0, :null => false
+      t.column :paper, :boolean, :default => 0, :null => false
       t.column :projeto, :boolean, :default => 0, :null => false
       t.column :seminario, :boolean, :default => 0, :null => false
     end

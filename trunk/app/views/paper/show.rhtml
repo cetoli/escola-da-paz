@@ -1,0 +1,37 @@
+<div id="content">
+	<div>
+		<div class="content">
+			<h1 class="title style1">Propriedades do Artigo</h1>
+			<br/>
+			<b>Título:</b> <%=h @paper.send('titulo') %>
+			<br/>
+			<b>Resumo:</b> <%=h @paper.send('resenha') %>
+			<br/>
+			<b>Criado Por:</b> <%=h @paper.user.nome %>
+			<br/>
+			<b>Data de Criação:</b> <%=h nice_date_time @paper.send('criado') %>
+			<br/>
+			<b>Data de Alteração:</b> <%=h nice_date_time @paper.send('alterado') %>
+			<br/>
+			<b>Área de Criação:</b> <%=h @paper.area.nome %>
+			<br/>
+			<b>Artigo:</b> <%=h @paper.send('nome_resumo') ? @paper.send('nome_resumo') : '-' %>
+			<br/>
+			<b>Anexo:</b> <%=h @paper.send('nome') ? @paper.send('nome') : '-' %>
+			<br/>
+			<b>Aprovado:</b> <%=h @paper.send('aprovado') ? 'Sim' : '-' %>
+			<br/>
+			<p ><% unless @paper.send('aprovado') %>
+				<%= link_to image_tag("ok.gif", :border => 0, :alt => 'Aprovar'), { :action => 'aprovar', :id => @paper }, :method => "post" %> | 
+				<% end %>
+				<% if @paper.send('nome_resumo') %>
+				<%= link_to image_tag("attach.gif", :border => 0, :alt => 'Artigo'), { :action => 'getResumo', :id => @paper }, :method => "post" %> | 
+				<% end %>
+				<% if @paper.send('nome') %>
+				<%= link_to image_tag("attach.gif", :border => 0, :alt => 'Anexo'), { :action => 'getAnexo', :id => @paper }, :method => "post" %> | 
+				<% end %>
+				<%= link_to image_tag("ed.png", :border => 0, :alt => 'Editar'), :action => 'edit', :id => @paper %> | <%= link_to image_tag("goBack.gif", :border => 0, :alt => 'Voltar'), :action => 'list' %>
+			</p>
+	  	</div>
+	</div>
+</div>
