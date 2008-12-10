@@ -1,0 +1,19 @@
+<%= error_messages_for 'biblioteca' %>
+
+<!--[form:biblioteca]-->
+<p>
+	<label for="biblioteca_titulo">Título:</label>
+	<br/>
+	<%= text_field 'biblioteca', 'titulo', :size => 75, :maxlength => 255 %>
+</p>
+<p>
+	<label for="biblioteca_anexos">Arquivo:</label>
+	<br/>
+	<%= file_field 'biblioteca', 'anexos' %>
+</p>
+<p>
+	<label for="biblioteca_arquivo_id">Tipo de Arquivo:</label>
+	<br/>
+	<%= select("biblioteca","arquivo_id", @arquivos) %>
+</p>
+<!--[eoform:biblioteca]-->

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Plataforma da PAZ</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'default' %>
+  <%= javascript_include_tag "MascaraValidacao" %>
+</head>
+<body>
+<div id="top">
+	<div style="float: right; margin-right: 20px;">
+		<br />
+		<span class="style4">Olá, <%= session[:user] ? session[:user].login : "visitante" %></span> | 
+		<a href="http://">Fale conosco</a> | 
+		<% if session[:user] %>
+			<%= link_to "Logout", {:controller => "user", :action => "logout"}, :method => "post" %>
+		<% end %>
+	</div>
+</div>
+<div id="top_header">
+</div>
+<div id="header">
+	<div id="header_left">
+	</div>
+</div>
+<div id="body">
+	<div id="leftcolumn">
+		<div id="lefttop">
+		</div>
+		<div class="moduletable_menu">
+			<ul class="menu">
+				<li id="current" class="active item1"><%= link_to "Principal", :controller => "user", :action => "welcome" %></li>
+				<li class="item45"><%= link_to "Novo usuário", :controller => "user", :action => "signup" %></li>
+				<li class="item46"><%= link_to "Lembrar minha senha", :controller => "user", :action => "forgot_password" %></li>
+				<li class="item47"><%= link_to "Sobre a Plataforma da Paz", :controller => "user", :action => "about" %></li>
+		</div>
+		<div id="leftbottom"></div>
+		<div id="linkscolumn">
+			<div class="moduletable">
+				<table border="0" cellpadding="2" align="center">
+					<tbody>
+						<tr align="center" valign="middle">
+							<td align="center" valign="middle"><a href="http://rio.unic.org/" target="_blank"><img src="/images/logo_ONU.jpg" border="0" width="82" height="74" /></a></td>
+						</tr>
+						<tr align="center" valign="middle">
+							<td align="center" valign="middle"><a href="http://www.dudh.org.br" target="_blank"><img src="/images/60_1.jpg" border="0" width="131" height="104" /></a></td>
+						</tr>
+						<tr align="center" valign="middle">
+							<td align="center" valign="middle"><a href="http://www.abrapabr.org.br/plataformas/paz/index.html" target="_blank"><img src="/images/SALAdaPAZ138.jpg" border="0" width="134" height="61" /></a></td>
+						</tr>
+						<tr align="center" valign="middle">
+							<td align="center" valign="middle">
+								<a href="http://www.abrapabr.org.br/plataformas/abrapa/index.html" target="_blank"><img src="/images/logo_abrapa.jpg" border="0" width="56" height="60" /></a>
+								<a href="http://www.abrapabr.org.br/plataformas/esgrima/index.html" target="_blank"><img src="/images/plataforma_ESGRIMA138.jpg" border="0" width="64" height="64" /></a>
+							</td>
+						</tr>
+						<tr align="center" valign="middle">
+							<td align="center" valign="middle">
+								<a href="http://www.abrapabr.org.br/plataformas/cristaal/index.html" target="_blank"><img src="/images/logoPlataforma2.jpg" border="0" width="64" height="64" /></a>
+								<a href="http://abrapa.nce.ufrj.br/user/login" target="_blank"><img src="/images/Plataforma_tuia_nova.jpg" border="0" width="64" height="64" /></a>
+							</td>
+						</tr>
+						<tr align="center" valign="middle">
+							<td align="center" valign="middle">
+								<a href="http://www.abrapabr.org.br/plataformas/ines/index.html" target="_blank"><img src="/images/neurolab_ines1.jpg" border="0" width="64" height="64" /></a>
+								<a href="http://www.abrapabr.org.br/plataformas/ibc/index.html" target="_blank"><img src="/images/neurolab_ibc1.jpg" border="0" width="64" height="64" /></a>
+							</td>
+						</tr>
+						<tr align="center" valign="middle">
+							<td align="center" valign="middle">
+								<a href="http://www.abrapabr.org.br/plataformas/neurolog/index.html" target="_blank"><img src="/images/neurolog_rede_1.jpg" border="0" width="69" height="54" /></a>
+								<a href="http://www.abrapabr.org.br/plataformas/ouro/index.html" target="_blank"><img src="/images/ouro1.jpg" border="0" width="64" height="64" /></a>
+							</td>
+						</tr>
+						<tr align="center" valign="middle">
+							<td align="center" valign="middle">
+								<a href="http://www.abrapabr.org.br/plataformas/neurolab/index.html" target="_blank"><img src="/images/neuro_ines_1.jpg" border="0" width="75" height="85" /></a>
+								<a href="http://www.abrapabr.org.br/plataformas/neurolab/index2.html" target="_blank"><img src="/images/neuro_ibc_1.jpg" border="0" width="75" height="85" /></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div id="mainbody">
+		<div id="content">
+			<p style="color: green"><%= flash[:message] %></p>
+			<p style="color: red"><%= flash[:warning] %></p>
+			<%= @content_for_layout %>
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<div class="style8" id="sidebar">
+		@ Plataforma da PAZ 2008 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<b>Powered by: </b><img src="/images/rails.png" alt="Ruby On Rails" align="center" height="45" />
+	</div>
+</div>
+<div id="bottom">
+	<div class="moduletable">
+		<table width="100%" border="0" cellpadding="0" cellspacing="1">
+			<tr>
+				<td nowrap="nowrap">
+					<a href="http://www.ufrj.br" target="_blank" class="mainlevel-footer" >Universidade Federal do Rio de Janeiro</a>
+					<a href="http://www.nce.ufrj.br" target="_blank" class="mainlevel-footer" >Núcleo de Computação Eletrônica</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<hr/>
+</body>
+</html>
