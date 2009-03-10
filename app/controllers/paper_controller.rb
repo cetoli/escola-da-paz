@@ -91,7 +91,7 @@ class PaperController < ApplicationController
   def aprovar
     @paper = Paper.find(params[:id])
     @paper.aprovado = true
-    if @paper.update
+    if @paper.save(false)
       flash[:message] = 'Artigo aprovado com sucesso!'
       redirect_to :action => 'show', :id => @paper
     else
