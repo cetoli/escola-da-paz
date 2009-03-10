@@ -22,7 +22,7 @@ class UserController < ApplicationController
       @user = User.find(params[:id])
       @user.attributes = params[:user]
       @user.aprovado = true
-      if @user.update
+      if @user.save(false)
         flash[:message] = 'Usuário aprovado com sucesso!'
         Notifications.deliver_userAcceptance(@user.email, @user.nome, @user.login)
         redirect_to :action => 'show', :id => @user
